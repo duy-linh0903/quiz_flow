@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4F46E5;
+    --secondary-color: #10B981;
+
+    --primary-bg-color: #F8F9FA;
+    --secondary-bg-color: #F3F4F5;
+
+    --text-color: #464555;
+
+    --font-awesome: 'Font Awesome 7 Free';
+
+    --primary-color-hover: #2a24b0;
+    --primary-color-light: #eeeffe;
+    --accent: #f0522a;
+    --muted: #6b6880;
+    --border-color: #C7C4D8;
+    --surface: #ffffff;
+    --shadow: 0 4px 32px rgba(55, 48, 212, .10);
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--primary-bg-color);
+    color: var(--text-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+button,
+a {
+    transition:
+        background-color .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+input {
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.nav-menu ul,
+footer ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--surface);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+
+.nav-menu ul li a {
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+header nav ul a:hover,
+header nav ul a:focus-visible {
+    color: var(--primary-color);
+}
+
+/* Main */
+
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 45px 15px;
+    min-height: calc(100vh - 140px);
+}
+
+.login-card {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 500px;
+    padding: 40px 30px;
+}
+
+.login-card-header {
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.login-card-header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.login-card-header p {
+    font-size: 16px;
+    color: var(--muted);
+}
+
+.login-form fieldset legend {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.login-form .field-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-form label {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.login-form input:not([type="checkbox"]) {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 16px;
+    color: var(--text-color);
+    background-color: var(--primary-bg-color);
+    transition: border-color 0.7, box-shadow 0.7s;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.login-form input[type="email"]::placeholder {
+    color: var(--muted);
+}
+
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(55, 48, 212, .12);
+    outline-offset: 2px;
+}
+
+.login-form .field-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-form .field-header a {
+    font-weight: bold;
+}
+
+.login-form .forgot-link {
+    font-size: 16px;
+    color: var(--primary-color);
+    transition: opacity 0.7;
+}
+
+.login-form .forgot-link:hover {
+    opacity: 0.7;
+}
+
+.login-form .password-wrapper {
+    position: relative;
+}
+
+.login-form .password-wrapper input {
+    width: 100%;
+}
+
+.remember-row {
+    display: flex;
+    align-items: center;
+}
+
+.remember-row input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    flex-shrink: 0;
+    accent-color: var(--primary-color);
+}
+
+.remember-row label {
+    font-size: 16px;
+    color: var(--muted);
+    cursor: pointer;
+    padding-left: 5px;
+}
+
+.login-form button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    margin: 15px 0px;
+    transition: all .2s ease;
+}
+
+.login-form button[type="submit"]:hover {
+    background: var(--primary-color-hover);
+    transform: translateY(-1px);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    margin: 15px 0px;
+    gap: 10px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-color);
+}
+
+.oauth-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 12px;
+}
+
+.btn-oauth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: var(--surface);
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color);
+    cursor: pointer;
+    flex: 1;
+    padding: 10px;
+    gap: 12px;
+}
+
+.btn-oauth:hover {
+    border-color: var(--primary-color);
+    background: var(--surface);
+    box-shadow: 0 2px 8px rgba(55, 48, 212, .08);
+}
+
+.btn-oauth i {
+    padding-right: 5px;
+    font-size: 24px;
+}
+
+.signup-prompt {
+    text-align: center;
+    font-size: 16px;
+    color: var(--muted);
+}
+
+.signup-prompt a {
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: opacity 0.7;
+}
+
+.signup-prompt a:hover {
+    opacity: .75;
+}
+
+/* Footer */
+footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border-color);
+}
+
+footer .container {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-nav a {
+    color: var(--text-color);
+    font-size: 16px;
+}
